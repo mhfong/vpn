@@ -1,6 +1,6 @@
 # Setup EC2 Instance as a Tailscale Exit Node for VPN
 
-This guide walks you through launching an EC2 instance, configuring it as a Tailscale exit node, and connecting your iPhone to use it as a VPN. You can choose between `ap-southeast-1` (Singapore) for proximity to the Philippines or `ap-northeast-1` (Tokyo) for a Japan VPN, leveraging the AWS Free Tier.
+This guide walks you through launching an EC2 instance, configuring it as a Tailscale exit node, and connecting your iPhone to use it as a VPN.
 
 ## Prerequisites
 - An AWS account with Free Tier access (750 hours/month for t3.micro instances).
@@ -66,8 +66,9 @@ echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
 sudo sysctl -p /etc/sysctl.d/99-tailscale.conf
 ```
 - Verify status:
+```console
 sudo tailscale status
-
+```
 - Note the Tailscale IP (e.g., `100.x.x.x`).
 
 ## Step 5: Enable the Exit Node
@@ -80,16 +81,7 @@ sudo tailscale status
 - Go to the Exit Node section and select the EC2 instance.
 - Verify connection:
 - Visit https://whatismyipaddress.com. It should show:
-  - Singapore (for `ap-southeast-1`).
   - Tokyo, Japan (for `ap-northeast-1`).
-
-## Additional Options
-### For True Philippine Network
-- Current EC2 in `ap-southeast-1` provides a Singapore IP, not Philippine.
-- Use Mullvad Tailscale add-on:
-- Enable in Tailscale admin console (paid plan required, see https://x.ai/grok).
-- Select a Manila exit node in the iPhone app.
-- Verify with https://whatismyipaddress.com showing Philippines.
 
 
 ## Additional Notes
