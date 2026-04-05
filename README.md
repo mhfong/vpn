@@ -1,6 +1,7 @@
 # Setup EC2 Instance as a Tailscale Exit Node for VPN
 
-This guide walks you through launching an EC2 instance, configuring it as a Tailscale exit node, and connecting your iPhone to use it as a VPN.
+This guide walks you through launching an EC2 instance, configuring it as a Tailscale exit node, and connecting your iPhone to use it as a VPN. 
+This is a totally **FREEEE** VPN that you can setup for yourself!!
 
 ## Prerequisites
 - An AWS account with Free Tier access (750 hours/month for t3.micro instances).
