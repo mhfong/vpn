@@ -1,6 +1,7 @@
 # Setup EC2 Instance as a Tailscale Exit Node for VPN
 
-This guide walks you through launching an EC2 instance, configuring it as a Tailscale exit node, and connecting your iPhone to use it as a VPN.
+This guide walks you through launching an EC2 instance, configuring it as a Tailscale exit node, and connecting your iPhone to use it as a VPN. 
+This is a totally **FREEEE** VPN that you can setup for yourself!!
 
 ## Prerequisites
 - An AWS account with Free Tier access (750 hours/month for t3.micro instances).
@@ -60,7 +61,6 @@ sudo tailscale up --auth-key=<your-auth-key> --advertise-exit-node
 #### 4c. Enable IP forwarding:
 ```console
 echo 'net.ipv4.ip_forward = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
-echo 'net.ipv6.conf.all.forwarding = 1' | sudo tee -a /etc/sysctl.d/99-tailscale.conf
 sudo sysctl -p /etc/sysctl.d/99-tailscale.conf
 ```
 #### 4d. Verify status:
